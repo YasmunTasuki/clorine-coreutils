@@ -1,6 +1,6 @@
 CFLAGS = -O3
 
-all: basename cat echo yes true false whoami
+all: basename cat echo yes true false whoami printf
 
 basename: basename.c
 	mkdir -p bin
@@ -22,6 +22,9 @@ false: false.c
 	gcc -o bin/$@ $^ $(CFLAGS)
 
 whoami: whoami.c
+	gcc -o bin/$@ $^ $(CFLAGS)
+
+printf: printf.c
 	gcc -o bin/$@ $^ $(CFLAGS)
 
 install: all
